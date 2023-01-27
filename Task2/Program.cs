@@ -2,37 +2,49 @@
 // замените на соответствующие отрицательные, и наоборот.
 // [-4, -8, 8, 2] -> [4, 8, -8, -2]
 
-// void PrintResult(int[] someArrayOfInt)
-// {
-//     string usersArray = 
-// }
-
-int[] ReverseValues(int[] arrayToReverse)
+int[] GetArray(int size, int minValue, int maxValue)
 {
-    for(int index = 0; index < arrayToReverse.Length; index++)
+    int[] res = new int[size];
+
+    for (int i = 0; i < size; i++)
     {
-        arrayToReverse[index] = -arrayToReverse[index];
-    }
-
-    return arrayToReverse;
-}
-
-int[] GetArray(int length, int minValue, int maxValue)
-{
-    int[] randIntArray;
+        res[i] = new Random().Next(minValue, maxValue + 1);
     
-    for(int elem = 0; elem < randIntArray.Length; elem++)
-    {
-       randIntArray[elem] = new Random().Next(minValue, maxValue + 1);
     }
-
-    return randIntArray;
+    return res;
 }
 
-Console.WriteLine(arrayToReverse);
+void ReverseValues(int[] arrayToReverse)
+{
+    for(int i = 0; i < arrayToReverse.Length; i++)
+    {
+        arrayToReverse[i] = -arrayToReverse[i];
+    }
+}
+
+void PrintResult(int[] array)
+{
+    Console.WriteLine($"{String.Join(", ", array)}");
+}
+
+void main()
+{
+    Console.Clear();
+    int[] array = GetArray(10, -100, 100);
+    PrintResult(array);
+    ReverseValues(array);
+    PrintResult(array);
+}
+
+main();
 
 // void main()
 // {
-//     int myRandomArray = GetArray(maxValue: 12, length: 0; minValue: -12);
-//     string 
+//     Console.Clear();
+//     int[] array = GetArray(100, 0, 150);
+//     int check = InputNum("Введите число, которое вы хотите найти");
+//     int elementCounted = SearchElement(array, check);
+//     PrintResult(array, elementCounted, check);
 // }
+
+// main();

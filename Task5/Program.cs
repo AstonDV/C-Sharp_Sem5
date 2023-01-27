@@ -25,7 +25,7 @@ int[] SumOfArraysPairs(int[] randomArray)
     int[] resultArray = new int[lengthOfResult];
     for(int index = 0; index < randomArray.Length / 2; index++)
     {
-        resultArray[index] = randomArray[index] + randomArray[randomArray.Length - 1 - index];
+        resultArray[index] = randomArray[index] * randomArray[randomArray.Length - 1 - index];
     }
     if(resultArray[resultArray.Length - 1] == 0) resultArray[resultArray.Length - 1] = randomArray[randomArray.Length / 2];
 
